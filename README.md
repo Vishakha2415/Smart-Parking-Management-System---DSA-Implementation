@@ -22,6 +22,7 @@ Main.java
     ↓ (imports)
     
 ParkingLot.java (Core Controller)
+
     ├─→ PriorityQueue<ParkingSlot>   // Available slots (Min-Heap)
     
     ├─→ HashMap<String, ParkingSlot>  // Occupied slots lookup  
@@ -225,36 +226,25 @@ Enter total slots: 20
 - **IoT Integration**: Sensor-based occupancy detection
 
 ## 📁 Project Structure
-
+```
 Smart_Parking_DSA/
-├── 📂 source/
-│   ├── 📂 models/                    # 4 Java Files
-│   │   ├── ParkingLot.java          (15197 bytes) - Main parking lot logic
-│   │   ├── ParkingSlot.java         (2083 bytes)  - Individual slot management
-│   │   ├── Ticket.java              (1957 bytes)  - Ticket generation
-│   │   └── Vehicle.java             (1418 bytes)  - Vehicle representation
+├── source/
+│   ├── models/
+│   │   ├── ParkingLot.java          # Main parking lot logic
+│   │   ├── ParkingSlot.java         # Individual slot management
+│   │   ├── Ticket.java              # Ticket generation
+│   │   └── Vehicle.java             # Vehicle representation
 │   │
-|
-|
-|
-|
-|
-│   ├── 📂 algorithms/               # 2 Java Files  
-│   │   ├── 📂 allocation/
-│   │   │   └── MinHeapAllocation.java (2245 bytes) - Slot allocation algorithm
-│   │   └── 📂 pricing/
-│   │       └── DynamicPricing.java    (4919 bytes) - Dynamic pricing algorithm
+│   ├── algorithms/
+│   │   ├── allocation/
+│   │   │   └── MinHeapAllocation.java  # Slot allocation algorithm
+│   │   └── pricing/
+│   │       └── DynamicPricing.java     # Dynamic pricing algorithm
 │   │
-|
-|
-|
-|
-│   └── Main.java                    (8933 bytes)  - Interactive program
+│   └── Main.java                    # Interactive program
 │
-|
-|
-└── README.md                        # This documentation
-
+└── README.md                        # Documentation
+```
 
 ## 📄 Technical Specifications
 
