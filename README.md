@@ -18,22 +18,26 @@ A complete parking management system demonstrating **real-world application of D
 
 ### System Design
 
-┌─────────────────────────────────────────────┐
-│               Main (Interface)              │
-├─────────────────────────────────────────────┤
-│                ParkingLot                   │
-│  ┌──────────────────────────────────────┐   │
-│  │  PriorityQueue - Available Slots     │   │
-│  │  HashMap - Occupied Slots            │   │ 
-│  │  HashMap - Active Tickets            │   │ 
-│  │  Queue - Waiting Vehicles            │   │
-│  └──────────────────────────────────────┘   │
-├─────────────────────────────────────────────┤
-│        Vehicle ↔ Ticket ↔ ParkingSlot       │
-├─────────────────────────────────────────────┤
-│     MinHeapAllocation    DynamicPricing     │
-└─────────────────────────────────────────────┘
+Main.java
+    ↓ (imports)
+ParkingLot.java (Core Controller)
+    ├─→ PriorityQueue<ParkingSlot>   // Available slots (Min-Heap)
+    |
+    ├─→ HashMap<String, ParkingSlot>  // Occupied slots lookup  
+    |
+    ├─→ HashMap<String, Ticket>       // Active tickets tracking
+    |
+    └─→ Queue<Vehicle>                // Waiting vehicles (FIFO)
+    
+        ↓
+    Vehicle.java  ←→  Ticket.java  ←→  ParkingSlot.java
+    
+        ↓
+    MinHeapAllocation.java  // Slot assignment algorithm
+    
+    DynamicPricing.java     // Price calculation algorithm
 
+    
 ## 🛠️ Installation & Usage
 
 ### Compilation Steps
@@ -229,14 +233,25 @@ Smart_Parking_DSA/
 │   │   ├── Ticket.java              (1957 bytes)  - Ticket generation
 │   │   └── Vehicle.java             (1418 bytes)  - Vehicle representation
 │   │
+|
+|
+|
+|
+|
 │   ├── 📂 algorithms/               # 2 Java Files  
 │   │   ├── 📂 allocation/
 │   │   │   └── MinHeapAllocation.java (2245 bytes) - Slot allocation algorithm
 │   │   └── 📂 pricing/
 │   │       └── DynamicPricing.java    (4919 bytes) - Dynamic pricing algorithm
 │   │
+|
+|
+|
+|
 │   └── Main.java                    (8933 bytes)  - Interactive program
 │
+|
+|
 └── README.md                        # This documentation
 
 
