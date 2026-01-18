@@ -223,24 +223,22 @@ Enter total slots: 20
 
 Smart_Parking_DSA/
 ├── 📂 source/
-
 │   ├── 📂 models/                    # 4 Java Files
 │   │   ├── ParkingLot.java          (15197 bytes) - Main parking lot logic
 │   │   ├── ParkingSlot.java         (2083 bytes)  - Individual slot management
 │   │   ├── Ticket.java              (1957 bytes)  - Ticket generation
 │   │   └── Vehicle.java             (1418 bytes)  - Vehicle representation
 │   │
-
 │   ├── 📂 algorithms/               # 2 Java Files  
 │   │   ├── 📂 allocation/
 │   │   │   └── MinHeapAllocation.java (2245 bytes) - Slot allocation algorithm
 │   │   └── 📂 pricing/
 │   │       └── DynamicPricing.java    (4919 bytes) - Dynamic pricing algorithm
 │   │
-
 │   └── Main.java                    (8933 bytes)  - Interactive program
 │
 └── README.md                        # This documentation
+
 
 ## 📄 Technical Specifications
 
