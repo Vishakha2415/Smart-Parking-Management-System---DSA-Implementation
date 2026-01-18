@@ -20,11 +20,12 @@ A complete parking management system demonstrating **real-world application of D
 
 Main.java
     ↓ (imports)
+    
 ParkingLot.java (Core Controller)
     ├─→ PriorityQueue<ParkingSlot>   // Available slots (Min-Heap)
-    |
+    
     ├─→ HashMap<String, ParkingSlot>  // Occupied slots lookup  
-    |
+    
     ├─→ HashMap<String, Ticket>       // Active tickets tracking
     |
     └─→ Queue<Vehicle>                // Waiting vehicles (FIFO)
