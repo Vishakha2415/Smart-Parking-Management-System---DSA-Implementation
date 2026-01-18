@@ -17,28 +17,23 @@ A complete parking management system demonstrating **real-world application of D
 ## 🏗️ Architecture
 
 ### System Design
-
-Main.java
-    ↓ (imports)
-    
-ParkingLot.java (Core Controller)
-
-    ├─→ PriorityQueue<ParkingSlot>   // Available slots (Min-Heap)
-    
-    ├─→ HashMap<String, ParkingSlot>  // Occupied slots lookup  
-    
-    ├─→ HashMap<String, Ticket>       // Active tickets tracking
-    |
-    └─→ Queue<Vehicle>                // Waiting vehicles (FIFO)
-    
-        ↓
-    Vehicle.java  ←→  Ticket.java  ←→  ParkingSlot.java
-    
-        ↓
-    MinHeapAllocation.java  // Slot assignment algorithm
-    
-    DynamicPricing.java     // Price calculation algorithm
-
+```
+┌─────────────────────────────────────────────┐
+│               Main (Interface)              │
+├─────────────────────────────────────────────┤
+│                ParkingLot                   │
+│  ┌──────────────────────────────────────┐   │
+│  │  PriorityQueue - Available Slots     │   │
+│  │  HashMap - Occupied Slots            │   │
+│  │  HashMap - Active Tickets            │   │
+│  │  Queue - Waiting Vehicles            │   │
+│  └──────────────────────────────────────┘   │
+├─────────────────────────────────────────────┤
+│        Vehicle ↔ Ticket ↔ ParkingSlot       │
+├─────────────────────────────────────────────┤
+│     MinHeapAllocation    DynamicPricing     │
+└─────────────────────────────────────────────┘
+```
     
 ## 🛠️ Installation & Usage
 
@@ -228,22 +223,22 @@ Enter total slots: 20
 ## 📁 Project Structure
 ```
 Smart_Parking_DSA/
-├── source/
-│   ├── models/
-│   │   ├── ParkingLot.java          # Main parking lot logic
-│   │   ├── ParkingSlot.java         # Individual slot management
-│   │   ├── Ticket.java              # Ticket generation
-│   │   └── Vehicle.java             # Vehicle representation
+├── 📂 source/
+│   ├── 📂 models/                    # 4 Java Files
+│   │   ├── ParkingLot.java           - Main parking lot logic
+│   │   ├── ParkingSlot.java          - Individual slot management
+│   │   ├── Ticket.java               - Ticket generation
+│   │   └── Vehicle.java              - Vehicle representation
 │   │
-│   ├── algorithms/
-│   │   ├── allocation/
-│   │   │   └── MinHeapAllocation.java  # Slot allocation algorithm
-│   │   └── pricing/
-│   │       └── DynamicPricing.java     # Dynamic pricing algorithm
+│   ├── 📂 algorithms/               # 2 Java Files  
+│   │   ├── 📂 allocation/
+│   │   │   └── MinHeapAllocation.java  - Slot allocation algorithm
+│   │   └── 📂 pricing/
+│   │       └── DynamicPricing.java     - Dynamic pricing algorithm
 │   │
-│   └── Main.java                    # Interactive program
+│   └── Main.java                       - Interactive program
 │
-└── README.md                        # Documentation
+└── README.md                        # This documentation
 ```
 
 ## 📄 Technical Specifications
